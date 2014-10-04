@@ -1,15 +1,13 @@
 
-from src import bot
+from src.bot import PyIRC
 
 server = "irc.kent.ac.uK"
 channel = "#skytown"
-botnick = "PyIRC"
+botnick = "pyrc"
 
 print("Starting up...\n")
 
-bot.connect(server)
-bot.nick(botnick)
-bot.join(channel)
+bot = PyIRC(server, 6667, channel, botnick)
 bot.run()
 
 print("Shutting down...\n")
